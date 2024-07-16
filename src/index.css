@@ -1,0 +1,70 @@
+body {
+  background-image: url('https://images.unsplash.com/photo-1516627142850-70df4aac4d25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjc2NTl8MHwxfGFsbHwyfHx8fHx8fHwxNjQ2MDk2OTc5&ixlib=rb-1.2.1&q=80&w=1080');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #3cae59; /* Couleur de secours */
+}
+
+.weather-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(240, 248, 255, 0.8); 
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.weather-container h1 {
+  color: #333;
+  font-size: 50px;
+}
+
+.CardTitle{
+  color: #333;
+  font-size: 30px; 
+}
+
+.weather-container p {
+  color: #666;
+  font-size: 16px;
+}
+
+.city-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.weather-icon {
+  width: 70px;
+  height: 70px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
