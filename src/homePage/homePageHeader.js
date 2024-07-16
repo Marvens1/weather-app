@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Weather.css';
 
 const HomePageHeader = () => {
@@ -18,11 +18,7 @@ const HomePageHeader = () => {
     }
   };
 
-  useEffect(() => {
-    fetchWeather(city);
-  }, [city]);
-
-  const fetchWeather = async (city) => {
+  const fetchWeather = useCallback(async () => {
     try {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=52d0ce61c06bbfc1f6587fad9189c9cc`);
       const data = await response.json();
@@ -31,7 +27,7 @@ const HomePageHeader = () => {
     } catch (error) {
       console.log("Error fetching weather data:", error);
     }
-  };
+  }, [city]);
 
   const handleCityChange = (e) => {
     setCity(e.target.value);
@@ -39,8 +35,12 @@ const HomePageHeader = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchWeather(city);
+    fetchWeather();
   };
+
+  useEffect(() => {
+    fetchWeather();
+  }, [fetchWeather]);
 
   return (
     <div className='weather-container'>
